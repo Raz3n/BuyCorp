@@ -12,7 +12,7 @@ import { ShoppingCart } from "@material-ui/icons";
 import {Link, useLocation} from "react-router-dom";
 
 
-import logo from "../../assets/logo.png"
+import logo from "../../assets/buy_corp.png"
 import useStyles from "./styles";
 
 const Navbar = ({totalItems}) => {
