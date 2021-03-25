@@ -56,9 +56,9 @@ const App = () => {
           <Route exact path="/cart">
             <Cart
               cart={cart}
-              handleUpdateCartQuantity={handleUpdateCartQuantity}
-              handleRemoveFromCart={handleRemoveFromCart}
-              handleEmptyCart={handleEmptyCart}
+              onUpdateCartQuantity={handleUpdateCartQuantity}
+              onRemoveFromCart={handleRemoveFromCart}
+              onEmptyCart={handleEmptyCart}
             />
           </Route>
           <Route exact path="/checkout">

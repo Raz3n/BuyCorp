@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
+import { Container, Typography, Button, Grid, Box } from "@material-ui/core";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
@@ -14,11 +14,10 @@ const Cart = ({
 
   const EmptyCart = () => (
     <Typography variant="subtitle1">
-      There are no items in your cart, {" "}
+      There are no items in your cart.
       <Link to="/" className={classes.link}>
-        BUY MORE
+        <Box fontWeight="fontWeightBold">BUY MORE!</Box>
       </Link>
-      !
     </Typography>
   );
   const FilledCart = () => (
@@ -50,7 +49,8 @@ const Cart = ({
             Empty Cart
           </Button>
           <Button
-            component={Link} to="/checkout"
+            component={Link}
+            to="/checkout"
             className={classes.checkoutButton}
             size="large"
             type="button"
