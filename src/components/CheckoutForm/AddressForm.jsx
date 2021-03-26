@@ -44,8 +44,8 @@ const AddressForm = ({ checkoutToken, next }) => {
       checkoutTokenId
     );
     setShippingCountries(countries);
-    // get array of country keys and give first one
-    setShippingCountry(Object.keys(countries)[0]);
+    // get array of country keys and set to UK which is 6th in array
+    setShippingCountry(Object.keys(countries)[5]);
   };
 
   const fetchSubdivisions = async (countryCode) => {
@@ -150,7 +150,7 @@ const AddressForm = ({ checkoutToken, next }) => {
           </Grid>
           <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Button component={Link} to="/cart" variant="outline">
+            <Button component={Link} to="/cart" variant="outlined">
               Back to Cart
             </Button>
             <Button type="submit" variant="contained" color="primary">

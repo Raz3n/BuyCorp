@@ -11,7 +11,7 @@ const FormInput = ({ name, label }) => {
         defaultValue={""}
         as={TextField}
         control={control}
-        fillwidth
+        fillwidth="true"
         name={name}
         label={label}
         required
