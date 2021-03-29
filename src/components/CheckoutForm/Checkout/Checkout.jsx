@@ -16,11 +16,11 @@ import PaymentForm from "../PaymentForm";
 
 const steps = ["Shipping address", "Payment details"];
 
-const Checkout = ({ cart }) => {
-  const classes = useStyles();
+const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
+  const classes = useStyles();
 
   // Generate a checkout token when user enters checkout
   useEffect(() => {
@@ -49,7 +49,13 @@ const Checkout = ({ cart }) => {
     activeStep === 0 ? (
       <AddressForm checkoutToken={checkoutToken} next={next} />
     ) : (
-      <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep}/>
+      <PaymentForm
+        shippingData={shippingData}
+        checkoutToken={checkoutToken}
+        nextStep={nextStep}
+        backStep={backStep}
+        onCaptureCheckout={onCaptureCheckout}
+      />
     );
   return (
     <>
