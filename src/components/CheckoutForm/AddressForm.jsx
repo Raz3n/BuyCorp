@@ -8,9 +8,10 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useForm, FormProvider } from "react-hook-form";
-import FormInput from "./FormInput";
 import { Link } from "react-router-dom";
+
 import { commerce } from "../../lib/commerce";
+import FormInput from "./FormInput";
 
 const AddressForm = ({ checkoutToken, next }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -90,12 +91,21 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   return (
     <>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom="true">
         Shipping Address
       </Typography>
       <FormProvider {...methods}>
-          {/* spread properties of current form in new object, passing singular values to change shipping data state later*/}
-        <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption}))}>
+        {/* spread properties of current form in new object, passing singular values to change shipping data state later*/}
+        <form
+          onSubmit={methods.handleSubmit((data) =>
+            next({
+              ...data,
+              shippingCountry,
+              shippingSubdivision,
+              shippingOption,
+            })
+          )}
+        >
           <Grid container spacing={3}>
             <FormInput name="firstName" label="First Name" />
             <FormInput name="lastName" label="Last Name" />

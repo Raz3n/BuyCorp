@@ -10,8 +10,6 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import {Link, useLocation} from "react-router-dom";
-
-
 import logo from "../../assets/buy_corp.png"
 import useStyles from "./styles";
 

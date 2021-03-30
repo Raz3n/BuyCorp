@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import useStyles from "./styles";
 
-const CartItem = ({ item, onUpdateCartQunatity, onRemoveFromCart }) => {
+const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
   const classes = useStyles();
   return (
     <Card>
@@ -29,7 +29,7 @@ const CartItem = ({ item, onUpdateCartQunatity, onRemoveFromCart }) => {
           <Button
             type="button"
             size="small"
-            onClick={() => onUpdateCartQunatity(item.id, item.quantity - 1)}
+            onClick={() => onUpdateCartQuantity(item.id, item.quantity - 1)}
           >
             -
           </Button>
@@ -37,7 +37,7 @@ const CartItem = ({ item, onUpdateCartQunatity, onRemoveFromCart }) => {
           <Button
             type="button"
             size="small"
-            onClick={() => onUpdateCartQunatity(item.id, item.quantity + 1)}
+            onClick={() => onUpdateCartQuantity(item.id, item.quantity + 1)}
           >
             +
           </Button>
