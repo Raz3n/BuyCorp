@@ -5,13 +5,18 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import useStyles from "./styles";
 
-const Cart = ({ cart, onUpdateCartQuantity, onRemoveFromCart, onEmptyCart }) => {
+const Cart = ({
+  cart,
+  onUpdateCartQuantity,
+  onRemoveFromCart,
+  onEmptyCart,
+}) => {
   const classes = useStyles();
 
   const handleEmptyCart = () => onEmptyCart();
 
   const renderEmptyCart = () => (
-    <Typography variant="subtitle1" style={{background: "#465f7d"}}>
+    <Typography variant="subtitle1" style={{ background: "#465f7d" }}>
       You have no items in your shopping cart,
       <Link className={classes.link} to="/">
         <Box fontWeight="fontWeightBold">BUY MORE!</Box>
@@ -20,23 +25,28 @@ const Cart = ({ cart, onUpdateCartQuantity, onRemoveFromCart, onEmptyCart }) => 
   );
 
   if (!cart.line_items) return "Loading";
-  
 
   const renderCart = () => (
     <>
-      <Grid container spacing={3}  >
+      <Grid container spacing={3}>
         {cart.line_items.map((lineItem) => (
-          <Grid item xs={12} sm={4} key={lineItem.id} style={{background: '#232f3e'}}>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            key={lineItem.id}
+            style={{ background: "#232f3e" }}
+          >
             <CartItem
               item={lineItem}
               onUpdateCartQuantity={onUpdateCartQuantity}
               onRemoveFromCart={onRemoveFromCart}
-              style={{background: '#232f3e'}}
+              style={{ background: "#232f3e" }}
             />
           </Grid>
         ))}
       </Grid>
-      <div className={classes.cardDetails} >
+      <div className={classes.cardDetails}>
         <Typography variant="h4">
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
@@ -68,13 +78,18 @@ const Cart = ({ cart, onUpdateCartQuantity, onRemoveFromCart, onEmptyCart }) => 
   );
 
   return (
-    <Container style={{background: "#465f7d"}}>
+    <Container style={{ background: "#465f7d" }}>
       <div className={classes.toolbar} />
-      <Typography className={classes.title} variant="h3" gutterBottom style={{color: '#f2f4f8'}}>
+      <Typography
+        className={classes.title}
+        variant="h3"
+        gutterBottom
+        style={{ color: "#f2f4f8" }}
+      >
         Your Shopping Cart
       </Typography>
-      {!cart.line_items.length ? renderEmptyCart() : renderCart() }
-    </Container >
+      {!cart.line_items.length ? renderEmptyCart() : renderCart()}
+    </Container>
   );
 };
 
