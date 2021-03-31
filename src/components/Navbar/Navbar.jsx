@@ -18,7 +18,7 @@ const Navbar = ({totalItems}) => {
   const location = useLocation();
 
   return (
-    <AppBar position="fixed" className={classes.appBar} color="inherit">
+    <AppBar position="fixed" className={classes.appBar} style={{background: '#232f3e'}}>
       <Toolbar>
         <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
           <img

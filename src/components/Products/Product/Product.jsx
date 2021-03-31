@@ -14,15 +14,15 @@ export const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} style={{background: '#232f3e'}}>
       <CardMedia
         className={classes.media}
         image={product.media.source}
         title={product.name}
       />
       <CardContent>
-        <div className={classes.cardContent}>
-          <Typography variant="h5" gutterBottom>
+        <div className={classes.cardContent} style={{color: '#f2f4f8'}}>
+          <Typography variant="h5" gutterBottom >
             {product.name}
           </Typography>
           <Typography variant="h5" gutterBottom>
@@ -32,11 +32,12 @@ export const Product = ({ product, onAddToCart }) => {
         <Typography
           dangerouslySetInnerHTML={{ __html: product.description }}
           variant="body2"
-          color="textSecondary"
+          style={{color: '#f2f4f8'}}
         ></Typography>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
         <IconButton
+        style={{color: '#f2f4f8'}}
           aria-label="Add to Cart"
           onClick={() => onAddToCart(product.id, 1)}
         >
