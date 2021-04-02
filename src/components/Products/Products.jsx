@@ -3,12 +3,15 @@ import { Grid } from "@material-ui/core";
 import Product from "./Product/Product";
 import useStyles from "./styles";
 
-
 const Products = ({products, onAddToCart}) => {
   const classes = useStyles();
   if (!products.length) return <p>Loading...</p>;
   return (
-    <main className={classes.content} style={{background: "#465f7d"}}>
+    <main className={classes.content} style={{background: "#465f7d",position: 'fixed',
+    padding: '0',
+    margin: 'none', top:0,
+    left:0,
+    }}>
       <div className={classes.toolbar} />
       <Grid container justify="center" spacing={4} >
         {products.map((product) => (
