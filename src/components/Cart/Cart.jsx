@@ -16,7 +16,7 @@ const Cart = ({
   const handleEmptyCart = () => onEmptyCart();
 
   const renderEmptyCart = () => (
-    <Typography variant="subtitle1" style={{ background: "#465f7d", color: "#f2f4f8" }}>
+    <Typography variant="subtitle1" style={{ background: "#465f7d", color: "#f2f4f8", left:0 }}>
       You have no items in your shopping cart,
       <Link className={classes.link} to="/">
         <Box fontWeight="fontWeightBold">BUY MORE!</Box>
@@ -78,7 +78,7 @@ const Cart = ({
   );
 
   return (
-    <Container style={{ background: "#465f7d", position:"absolute", left:0, bottom:0, top:0 }}>
+    <Container style={{ background: "#465f7d", position:"absolute", height:"100vh", width:"100vw", left:0 }}>
       <div className={classes.toolbar} />
       <Typography
         className={classes.title}
