@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <Router>
-      <div style={{ display: "flex"}} >
+      <div style={{ display: "flex", background: "#465f7d"}} >
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
