@@ -6,6 +6,7 @@ import {
   CardActions,
   Typography,
   IconButton,
+  Box
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
@@ -22,10 +23,14 @@ export const Product = ({ product, onAddToCart }) => {
       />
       <CardContent>
         <div className={classes.cardContent} style={{color: '#f2f4f8'}}>
-          <Typography variant="h5" gutterBottom >
+        
+          <Typography variant="h6"  gutterBottom component="h2" >
+          <Box fontWeight="fontWeightBold">
             {product.name}
+            </Box>
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          
+          <Typography variant="h6" gutterBottom component="h2" >
             {product.price.formatted_with_symbol}
           </Typography>
         </div>
@@ -33,6 +38,7 @@ export const Product = ({ product, onAddToCart }) => {
           dangerouslySetInnerHTML={{ __html: product.description }}
           variant="body2"
           style={{color: '#f2f4f8'}}
+          component="p"
         ></Typography>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
