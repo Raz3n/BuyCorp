@@ -2,6 +2,8 @@
 
 Hosted at <https://buycorp.netlify.app/>
 
+Readme in progress
+
 
 ## Getting Started with Create React App
 
